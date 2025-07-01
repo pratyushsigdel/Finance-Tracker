@@ -1,0 +1,470 @@
+* {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+.nav-header {
+  width: 90vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.logo {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  padding: 3px;
+  background-color: #3B82F6;
+  color: white;
+  font-size: larger;
+  border: none;
+  border-radius: 8px;
+  width: 226px;
+  height: 54px;
+  padding: 3px;
+  cursor: pointer;
+}
+
+.btn:hover{
+  background-color: #164ea7;
+}
+
+.nav-center {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding: 1.3em;
+  margin: 1.2em;
+}
+
+.dashboard {
+  display: flex;
+  gap: 10px;
+}
+
+.transaction {
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+}
+
+.section-center {
+  padding: 1.2em;
+
+}
+
+.card-container {
+  width: 100%;
+  display: flex;
+  gap: 2.9em;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.card {
+  display: flex;
+  background-color: rgba(136, 200, 192, 0.649);
+  flex-direction: column;
+  height: 20%;
+  width: 30%;
+  border: 2px solid #E2E8F0;
+  left: 10%;
+  border-radius: 30px;
+  padding: 1.2em;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+}
+
+.card:hover{
+   box-shadow: 0 0 20px rgba(0, 0, 0, 0.7)
+}
+
+.income {
+  color: green
+}
+
+.expense {
+  color: red;
+}
+
+.card-heading {
+  display: flex;
+  align-items: center;
+  gap: 2.3em;
+}
+
+.section-main {
+  border: 1px solid #E2E8F0;
+  margin-top: 1.1em;
+  box-shadow: 10px 10px #E2E8F0;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.section-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.3em;
+  width: 80%;
+  padding: 1.2em;
+  align-items: center;
+  height: 90%;
+
+}
+
+.section-content {
+  margin: 1.1em 0;
+  display: flex;
+  flex-direction: column;
+  padding: 1.3em;
+  gap: 23px;
+  width: 90%;
+
+}
+
+.center-content {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 300px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #474c546d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 2em;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.hidden {
+  display: none;
+}
+
+#transaction-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: flex-start;
+}
+
+#transaction-form input {
+  padding: 15px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.modal-content form button {
+  margin-top: 10px;
+  background-color: #3B82F6;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.options {
+  display: flex;
+  gap: 12px;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9em;
+  margin-top: -0.8em;
+  margin-bottom: 0.5em;
+}
+
+.dynamic-transaction {
+  background-color: rgba(119, 192, 231, 0.371);
+  margin: 2em;
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.529);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font-size: larger;
+}
+
+.dynamic-transaction:hover {
+  /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.7); */
+  background-color: rgba(105, 184, 227, 0.5);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+
+.transaction-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: start;
+  justify-content: start;
+  gap: 3.3em;
+}
+
+.deleteBtn {
+  margin-top: 9px;
+  padding: 9px;
+  background-color: red;
+  color: white;
+  font-size: larger;
+  border: none;
+  border-radius: 8px;
+  width: 226px;
+  height: 34px;
+  padding: 3px;
+  cursor: pointer;
+  position: relative;
+  align-self: center;
+
+}
+
+.filter-controls {
+  padding: 1.9em;
+}
+
+.control {
+  display: flex;
+  gap: 1em;
+  margin-bottom: 1em;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.control input,
+.control select {
+  padding: 0.6em;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 399px;
+  font-size: larger;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+  header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+  }
+  .nav-header{
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    width: 100%;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .nav-center{
+    gap: 1.5em;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .logo {
+    gap: 20px;
+    flex-direction: row;
+  }
+
+  .card-container {
+    flex-direction: column;
+    gap: 2em;
+  }
+
+  .card {
+    width: 80%;
+    height: auto;
+  }
+
+  .section-container {
+    flex-direction: column;
+    width: 100%;
+    padding: 1em;
+  }
+
+  .transaction-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+  }
+
+  .control {
+    flex-direction: column;
+    gap: 2.9em;
+    font-size: 1.3em;
+    width: 80%;
+  }
+
+  .filter-controls{
+    width: 80%;
+  }
+  .control input,
+  .control select {
+    width: 100%;
+    font-size: 1em;
+    margin-top:1.2em ;
+  
+  }
+
+  .btn,
+  .deleteBtn {
+    width: 100%;
+    font-size: 1.7rem;
+    height: auto;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+
+  .card-heading {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1em;
+  }
+}
+
+
+@media screen and (max-width: 640px) {
+  .nav-header,
+  .dashboard,
+  .transaction {
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+  }
+
+  .nav-center {
+    width: 80%;
+    align-content: center;
+    flex-direction: row;
+  }
+
+  .logo {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .card-container {
+    flex-direction: column;
+    gap: 1.5em;
+  }
+
+  .card {
+    width: 90%;
+    padding: 1em;
+    height: auto;
+  }
+
+  .section-container,
+  .section-content {
+    flex-direction: column;
+    width: 100%;
+    padding: 1em;
+  }
+
+  .transaction-content {
+    grid-template-columns: 1fr;
+    gap: 1em;
+  }
+
+  .control {
+    flex-direction: column;
+    gap: 2.9em;
+    font-size: 1.3em;
+  }
+
+  .control input,
+  .control select {
+    width: 100%;
+    font-size: 1em;
+    margin-top:1.2em ;
+  
+  }
+
+  .btn,
+  .deleteBtn, submitBtn {
+    width: 100%;
+    font-size: 1.5rem;
+    height: auto;
+    align-self: center;
+  }
+
+
+  .modal-content form button {
+  margin-top: 10px;
+  background-color: #3B82F6;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  align-self: center;
+
+}
+
+  .modal-content {
+    width: 95%;
+    padding: 1.5em;
+    margin: 1.2em;
+  }
+
+  .card-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7em;
+  }
+
+  .center-content {
+    min-height: 200px;
+  }
+}

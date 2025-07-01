@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Finance Tracker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="nav-header" id="dashboard">
+            <div class="logo">
+                <img src="./logo.jpg" height="90px"  alt="Logo">
+                <h1> Personal Finance Tracker</h1>
+            </div>
+            <div class="add-transcation">
+            <button class="btn"> <i class="fas fa-plus" style="color: black;"></i>
+                Add Transcation</button>
+            </div>
+        </nav>
+        <div class="nav-center">
+            <div class="dashboard" >
+                <img src="./dashboard.png" height="60px" width="60px" alt="Dashboard">
+                <h3><a href="#dashboard"> Dashboard </a></h3>
+            </div>
+            <div class="transaction">
+                <img src="./Transaction.png" height="60px" width="60px" alt="Transaction">
+                <h3> <a href="#transaction">Transactions </a> </h3>
+            </div>
+        </div>
+    </header>
+    <section class="section-center">
+        <div class="card-container">
+            <div class="card">
+                <div class="card-heading">
+                    <h2> Total Balance</h2>
+                    <div class="card-image">
+                        <i class="fas fa-dollar"></i>
+                    </div> 
+                </div>
+                <div class="card-value">
+                    <h1 class="income"> $0.00</h1>
+                    <p> Updated Just Now</p>
+                </div>
+            </div>
+
+
+             <div class="card">
+                <div class="card-heading">
+                    <h2> Total Income</h2>
+                    <div class="card-image">
+                        <i class="fas fa-arrow-up" style="color: green;"></i>
+                    </div> 
+                </div>
+                <div class="card-value">
+                    <h1 class="income"> $0.00</h1>
+                    <p> 0 Transactions</p>
+                </div>
+            </div>
+             <div class="card">
+                <div class="card-heading">
+                    <h2> Total Expenses </h2>
+                    <div class="card-image">
+                        <i class="fas fa-arrow-down" style="color: red;"></i>
+                    </div> 
+                </div>
+                <div class="card-value">
+                    <h1 class="expense"> $0.00</h1>
+                    <p> 0 Transactions</p>
+                </div>
+            </div>     
+        </div>
+    </section>
+    <section class="section-main">
+        <div class="section-container">
+            <div class="recent-transaction" id="transaction">
+                <h2> Recent Transactions</h2>
+            </div>
+        </div>
+        <p id="category-fallback-msg" style="display: none; color: red; text-align: center; margin-top: 1rem; font-size: larger;"> </p>
+         <section class="filter-controls">
+            <div class="control">
+                <div class="searchDescription">
+                    <label for="search-input">Search By:</label>
+                    <input type="text" id="search-input" placeholder="Search Description..." />
+                </div>
+                <div class="sort">
+                    <label for="sort-select">Sort By:</label>
+                    <select id="sort-select" name="sort-select">
+                        <option value="amount-asc"> Highest Amount </option>
+                        <option value="amount-desc">Lowest Amount</option>
+                        <option value="date-asc">Latest Date</option>
+                        <option value="date-desc">Past Date</option>
+                    </select>
+                </div>
+                <div class="filter">
+                    <label for="filter-select">Filter By:</label>
+                    <select id="filter-select" name="filter-select">
+                        <option value="all">All</option>
+                        <option value="Income">Income</option>
+                        <option value="Expense">Expense</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+        
+        <div class="section-content">
+            <!-- <div class="section-image">
+                <img src="./Frame.png" alt="Frame">
+            </div>
+            <div class="section-heading">
+                <h3> No Transactions Yet</h3>
+            </div>
+            <span> Start Tracking Your Finances by Adding your First Transaction</span>
+            <div class="section-button">
+                <button type="button" class="btn"> Add Transaction</button>
+            </div> -->
+        </div>
+
+          </section>
+       
+  
+    <section class="form">
+        <div id="transaction-modal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close-btn"> <i class="fa fa-close"></i></span>
+                <h2> Add New Transaction</h2>
+                <form  id="transaction-form">
+                    <div class="amount">
+                        <label for="amount">Amount:</label>
+                        <input type="text" id="amount" name="amount" placeholder="Amount (e.g. 50 or 20)" required> <br>
+                        <small id="amount-error" class="error-message hidden">Please Enter a valid amount</small>
+
+                    </div>
+                    <div class="options">
+                        <input type="radio" id="Income" name="category" value="Income">
+                        <label for="Income">Income</label> <br>
+                        <input type="radio" name="category" id="Expense" value="Expense">
+                        <label for="Expense">Expense</label>
+                    </div>
+                    <div class="description">
+                        <label for="description"> Description:</label>
+                        <input type="textarea" id="description" name="description" placeholder="Income/Expense" required> <br>
+                        <small id="desc-error" class="error-message hidden">Description cannot be less than 3 characters</small>
+
+                    </div>
+                    <div class="date">
+                        <label for="date">Date:</label>
+                        <input type="date" id="date" name="date"> <br>
+                        <small id="date-error" class="error-message hidden">Please Enter The Valid Date!!</small>
+                    </div>
+                    <div class="submit">
+                        <button type="submit" class="btn submitBtn"> Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="script.js"></script>
+        </section>
+</body>
+</html>
